@@ -27,15 +27,14 @@ def insertion_sort(arr, n):
 
 
 def insert_into_sorted_sublist(arr, index):
+    pivot = arr[index - 1]
 
-    temp = arr[index]
-    j = index - 1
-
-    while j >= 0 and arr[j] > temp:
-        arr[j+1] = arr[j]
-        j -= 1
-
-    arr[j+1] = temp
+    for idx in range(index - 2, -1, -1):
+        if arr[idx] > pivot:
+            arr[idx + 1] = arr[idx]
+        else:
+            arr[idx + 1] = pivot
+            break
 
 """
 def swap(arr, index1, index2):
@@ -56,7 +55,7 @@ def main():
     print('Input array is : ')
     print(arr)
 
-    insertion_sort(arr)
+    insertion_sort(arr, len(arr))
 
     print('Sorted array is : ')
     print(arr)

@@ -4,41 +4,39 @@ def merge_sorted_sublists(arr, start, mid, end):
 
     result = []
 
-    idx1 = start
-    idx2 = mid
+    left = start
+    right = mid
 
     while True:
+        if arr[left] < arr[right]:
+            result.append(arr[left])
+            left += 1
+        else:
+            result.append(arr[right])
+            right += 1
 
-        if idx1 < mid and idx2 < end:
-            if arr[idx1] <= arr[idx2]:
-                result.append(arr[idx1])
-                idx1 += 1
-            else:
-                result.append(arr[idx2])
-                idx2 += 1
-        elif idx1 == mid:
-            result.extend(arr[idx2:end])
+        if left == mid:
+            result.extend(arr[right:])
             break
-        else:   # idx2 == end
-            result.extend(arr[idx1:mid])
+        elif right == end + 1:
+            result.extend(arr[left:mid])
             break
 
-    return result
+    for idx in range(start, end + 1):
+        arr[idx] = result[idx - start]
 
 
-def split_and_merge(arr, start, end):
 
-    if (end - start) < 2:
+def merge_sort(arr, start, end):
+
+    if start == end:
         return
 
-    mid = int((start + end) / 2)
-    split_and_merge(arr, start, mid)
-    split_and_merge(arr, mid, end)
-    arr[start:end] = merge_sorted_sublists(arr, start, mid, end)
+    mid_idx = int((end + start)/2)
+    merge_sort(arr, start, mid_idx)
+    merge_sort(arr, mid_idx + 1, end)
 
-
-def merge_sort(arr):
-    split_and_merge(arr, 0, len(arr))
+    merge_sorted_sublists(arr, start, mid_idx + 1, end)
 
 
 def main():
@@ -46,7 +44,7 @@ def main():
     arr_str = input('integer array values : ').split()
     arr = [int(x) for x in arr_str]
 
-    merge_sort(arr)
+    merge_sort(arr, 0, len(arr)-1)
     print('sorted ==> ', arr)
 
 

@@ -2,21 +2,17 @@ __author__ = 'Stallon'
 
 
 def selection_sort(arr, ascend = True):
-
-    outindex = -1
     innerindex = 0
     cp = 1 if ascend else -1
 
-    for outer_elem in arr:
-        outindex += 1
+    for outindex in range(0, len(arr)):
         innerindex = outindex + 1
+        outer_elem = arr[outindex]
 
         for inner_elem in arr[innerindex:]:
-
             if outer_elem*cp > inner_elem*cp :
                 swap(arr, outindex, innerindex)
                 outer_elem = inner_elem
-
             innerindex += 1
 
 
