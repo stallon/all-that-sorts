@@ -9,7 +9,7 @@ def swap(arr, i, j):
     arr[i] = arr[j]
     arr[j] = temp
 
-    print('swapping ... ' + arr.__str__())
+    print('swapping ... ' + str(arr))
 
 
 def compare_and_change_with_children(arr, start, end, index):
@@ -63,7 +63,7 @@ def make_max_heap(arr, start, end):
         for index in range(start_index, end_index):
             compare_and_change_with_children(arr, start, end, index)
 
-    print('[MAX HEAP: start = %d] %s' % (start, arr.__str__()))
+    print('[MAX HEAP: start = %d] %s' % (start, str(arr)))
 
 
 def heap_sort(arr):
@@ -71,7 +71,7 @@ def heap_sort(arr):
     length = len(arr)
 
     for i in range(0, length - 2):
-        make_max_heap(arr, i, arr.__len__())
+        make_max_heap(arr, i, len(arr))
 
 
 def main():
@@ -79,7 +79,7 @@ def main():
     arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
     heap_sort(arr)
 
-    print('[FINAL SORTED] ' + arr.__str__())
+    print('[FINAL SORTED] ' + len(arr))
 
 
 if __name__ == '__main__':

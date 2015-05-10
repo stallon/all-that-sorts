@@ -85,8 +85,8 @@ def swap(arr, index1, index2):
 
 def main():
 
-    Int_squence = input('Type a sequence of integers: ')
-    arrstr = Int_squence.split()
+    int_squence = input('Type a sequence of integers: ')
+    arrstr = int_squence.split()
     arr = []
 
     for intstr in arrstr:
