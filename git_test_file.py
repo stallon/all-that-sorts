@@ -1,6 +1,7 @@
 print("Hello, World!")
 print("Hello, Korea, too!")
 print("Hello, My home!!")
+print('Hello, This is for a rebase-test')
 
 # make the first change on develop branch.
 
