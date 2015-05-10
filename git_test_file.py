@@ -17,3 +17,4 @@ print("This is a hotfix code")
 
 # This is for rebase-test.
 print('This is for a rebase-test')
+print('Another line for a rebase-test')
