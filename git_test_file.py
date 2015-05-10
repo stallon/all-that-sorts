@@ -13,3 +13,7 @@ print("This is a second change in review-git-test-file")
 
 # This is a hotfix line.
 print("This is a hotfix code")
+
+
+# This is for rebase-test.
+print('This is for a rebase-test')
