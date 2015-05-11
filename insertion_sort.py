@@ -43,6 +43,7 @@ def swap(arr, index1, index2):
     arr[index2] = temp
 """
 
+
 def main():
 
     str = input('Type a sequence of integers: ')
